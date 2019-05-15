@@ -32,14 +32,14 @@ func main() {
 	fmt.Println(CheckString("ZZZZZZZZ"))
 }
 
+// TODO 优化
 var hashSeeds = []int8{3, 5, 7, 9, 11, 13, 17, 19, 23, 27, 29, 31}
 
-//TODO 考虑类型优化，节约内存
 var array = make([]uint8, 1000, 1000)
 
 const maxSeedNum = 50
 
-// TODO 考虑采用随机获得SEED方法？
+// TODO 考虑采用随机获得Seed方法？
 func getRandomHashSeed(seedNum int32) ([]int64, error) {
 	if seedNum > maxSeedNum {
 		return nil, errors.New("exceed max seed number")
